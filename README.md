@@ -2,7 +2,7 @@
 zxy前端项目Gulp构建
 
 ##安装
-1.预备环境：nodejs <a href="https://nodejs.org/en/" target="_blank">nodejs官网</a> 
+1.预备环境：nodejs 
 
 2.全局安装 Gulp：
 
