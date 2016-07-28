@@ -32,3 +32,7 @@ zxy前端项目Gulp构建
 
 5.livereload修改文件后浏览器实时刷新
     
+##扩展资料
+1.less：<a href="http://www.bootcss.com/p/lesscss/">文档</a>
+
+2.ES6: <a href="http://es6.ruanyifeng.com/">文档</a>
