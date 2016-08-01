@@ -5,7 +5,6 @@ var less = require('gulp-less');
 var connect = require('gulp-connect');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
-var rename = require('gulp-rename');
 var minifycss = require('gulp-minify-css');
 var imagemin = require('gulp-imagemin');
 var rev = require('gulp-rev');
@@ -15,6 +14,7 @@ var babel = require("gulp-babel");
 var runSequence = require('run-sequence'); // 改变任务优先级
 var cache = require('gulp-cache');         // 缓存插件，使图片仅更新缓存中不一样的图片
 var stripDebug = require('gulp-strip-debug'); 
+var sourcemaps = require('gulp-sourcemaps');
 
 // 图片压缩优化
 gulp.task('imagemin', function() {
@@ -52,13 +52,15 @@ gulp.task('default',['server','watch']);
 /*js压缩、ES6转换ES5、文件名生成md5版本戳*/
 gulp.task('jsmin',function(){
 	return gulp.src(['./dev/js/*.js', '!./dev/js/list.js',])
+  .pipe(sourcemaps.init()) 
   .pipe(babel({
       presets: ['es2015']
     }))
+  .pipe(sourcemaps.write())
 	.pipe(rev())
 	.pipe(gulp.dest('./dist/js/'))
 	.pipe(rev.manifest())
-    .pipe(gulp.dest('./rev/js'));
+  .pipe(gulp.dest('./rev/js'));
 })
 
 /*less转css编译 压缩 文件名生成md5版本戳*/
@@ -67,7 +69,6 @@ gulp.task('cssmin',function(){
 	return gulp.src('./dev/css/style-index.less')
 	.pipe(less())
 	.pipe(minifycss())
-	.pipe(rename('style-index.min.css'))
 	.pipe(rev())
 	.pipe(gulp.dest('dist/css/'))
 	.pipe(rev.manifest())
