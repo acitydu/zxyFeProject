@@ -47,6 +47,7 @@ gulp.task('server',function(){
 	})
 })
 
+/*默认任务*/
 gulp.task('default',['server','watch']);
 
 /*js压缩、ES6转换ES5、文件名生成md5版本戳*/
