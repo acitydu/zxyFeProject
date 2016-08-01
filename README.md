@@ -4,7 +4,7 @@ zxy前端项目Gulp工作流
 - *适用于多页面的非SPA前端项目*
 - *dev为开发目录，dist为生产目录*
 - *SPA项目建议使用Vue.js的官方构建方式构建，---》》》* <a href="http://vuejs.org.cn/guide/installation.html">vuejs命令行安装</a>
-- ** css、js、fonts文件夹为ZXY前端Lib文件、长期更新 **
+- ** css、js、fonts文件夹为ZXY前端Lib文件，长期更新 **
 
 ##安装
 1.预备环境：nodejs 
