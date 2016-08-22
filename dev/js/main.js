@@ -41,7 +41,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 GLOBAL.Toast = function (content,time = "3000") {
-    //time = (typeof time == "undefined") ? "3000" : time;
     var div = document.createElement("div");
     div.id = "Toast";
     div.className = "ui-toast animated fadeIn";
